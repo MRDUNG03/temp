@@ -18,7 +18,7 @@ const char *pass = "23456778";
 const char *serverName = "http://192.168.10.154:3000/api/devices/data";
 // const char *ssid = "NW-TEST03";
 // const char *pass = "ivc10nam2014";
-const char *serverName ="http://192.168.10.154:3000/api/devices/data";
+// const char *serverName ="http://192.168.10.154:3000/api/devices/data";
 // ================== PIN ESP32-WROOM ==================
 #define I2C_SDA    21
 #define I2C_SCL    22
@@ -45,7 +45,7 @@ float readDustGP2Y() {
   digitalWrite(LED_DUST, HIGH);
   delayMicroseconds(9680);
 
-  float voltage = adc * 3.3 / 4095.0;
+  float voltage = adc * 5.0 / 4095.0;
   float dust = (voltage - DUST_V0) / 0.005;
   return dust < 0 ? 0 : dust;
 }
